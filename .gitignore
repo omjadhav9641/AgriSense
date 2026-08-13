@@ -1,0 +1,33 @@
+# Python & Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.db
+venv/
+env/
+ENV/
+.venv/
+db.sqlite3
+*.log
+media/
+staticfiles/
+
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+.vite/
+.npm/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Antigravity artifacts
+.gemini/

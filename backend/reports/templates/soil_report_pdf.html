@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Soil Health & Crop Recommendation Report</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: #2B2E28;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        .header-table {
+            width: 100%;
+            border-bottom: 2px solid #4C7A45;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #4C7A45;
+        }
+        .subtitle {
+            font-size: 10pt;
+            color: #6B6F63;
+        }
+        .info-grid {
+            width: 100%;
+            margin-bottom: 15px;
+            border-collapse: collapse;
+        }
+        .info-grid td {
+            padding: 4px 8px;
+            font-size: 9pt;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #6B6F63;
+        }
+        .section-header {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #4C7A45;
+            background-color: #EEF3EA;
+            padding: 6px 10px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            border-left: 4px solid #4C7A45;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .data-table th {
+            background-color: #F4F1EA;
+            color: #2B2E28;
+            font-weight: bold;
+            text-align: left;
+            padding: 6px 8px;
+            font-size: 9pt;
+            border: 1px solid #E2DDD3;
+        }
+        .data-table td {
+            padding: 6px 8px;
+            font-size: 9pt;
+            border: 1px solid #E2DDD3;
+        }
+        .badge {
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 8pt;
+        }
+        .badge-optimal, .badge-sufficient { color: #2D6A2E; background-color: #E2F1E1; }
+        .badge-low { color: #C05621; background-color: #FDF2E9; }
+        .badge-medium { color: #D98E4A; background-color: #FEFCBF; }
+        .badge-high { color: #B7791F; background-color: #FEFCBF; }
+        .crop-card {
+            border: 1px solid #E2DDD3;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+            background-color: #FAFAFA;
+        }
+        .crop-title {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #2B2E28;
+        }
+        .analysis-text {
+            font-size: 8.5pt;
+            color: #6B6F63;
+            font-style: italic;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Block -->
+    <table class="header-table">
+        <tr>
+            <td>
+                <div class="title">AgriSense Precision Agriculture</div>
+                <div class="subtitle">Soil Health & Crop Recommendation Report</div>
+            </td>
+            <td style="text-align: right;">
+                <div style="font-size: 11pt; font-weight: bold; color: #4C7A45;">Lab Ref: {{ report.lab_reference }}</div>
+                <div style="font-size: 8.5pt; color: #6B6F63;">Date: {{ report.sample_date }}</div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Metadata Grid -->
+    <table class="info-grid">
+        <tr>
+            <td class="info-label" width="18%">Farmer Name:</td>
+            <td width="32%">{{ report.farmer_name }}</td>
+            <td class="info-label" width="18%">Land ID:</td>
+            <td width="32%">{{ report.land_id }} ({{ report.land_name }})</td>
+        </tr>
+        <tr>
+            <td class="info-label">Acreage:</td>
+            <td>{{ report.acreage }} Acres</td>
+            <td class="info-label">Soil Type:</td>
+            <td>{{ report.soil_type }}</td>
+        </tr>
+        <tr>
+            <td class="info-label">Location:</td>
+            <td colspan="3">{{ report.location }}</td>
+        </tr>
+    </table>
+
+    <!-- Section 1 — Soil Parameter Analysis -->
+    <div class="section-header">Section 1 — Soil Parameter Analysis</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Observed Value</th>
+                <th>Standard Ideal Range</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in report.soil_analysis_table %}
+            <tr>
+                <td><strong>{{ row.parameter }}</strong></td>
+                <td>{{ row.observed_value }}</td>
+                <td>{{ row.ideal_range }}</td>
+                <td>
+                    <span class="badge badge-{{ row.status|lower }}">{{ row.status }}</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Section 2 — Soil Health Interpretation -->
+    <div class="section-header">Section 2 — Soil Health Interpretation</div>
+    <ul>
+        {% for note in report.soil_narratives %}
+        <li style="font-size: 9pt; margin-bottom: 4px;">{{ note }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Section 3 — Crop Recommendation -->
+    <div class="section-header">Section 3 — Crop Recommendation</div>
+    <div style="padding: 8px; background-color: #E2F1E1; border: 1px solid #4C7A45; margin-bottom: 12px;">
+        <div style="font-size: 11pt; font-weight: bold; color: #2D6A2E;">
+            Recommended Crop: {{ report.top_recommended_crop.crop_name }} ({{ report.top_recommended_crop.category }} — Score: {{ report.top_recommended_crop.score }}/10)
+        </div>
+        <div style="font-size: 9pt; color: #6B6F63; margin-top: 2px;">
+            Basis: {{ report.top_recommended_crop.basis }}
+        </div>
+    </div>
+
+    <!-- Section 4 — Fertilizer Advisory -->
+    <div class="section-header">Section 4 — Fertilizer Advisory (Evaluated Crops)</div>
+    
+    {% for crop in report.all_evaluated_crops %}
+    <div class="crop-card">
+        <div class="crop-title">
+            {{ crop.crop_name }} (Season: {{ crop.season }}) &mdash; Score: {{ crop.score }}/10 &bull; <span style="color: #4C7A45;">{{ crop.category }}</span>
+        </div>
+        
+        <table class="data-table" style="margin-top: 6px; margin-bottom: 6px;">
+            <thead>
+                <tr>
+                    <th>Nutrient</th>
+                    <th>Recommended Dosage (kg/acre)</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in crop.dosage_table %}
+                <tr>
+                    <td>{{ row.nutrient }}</td>
+                    <td><strong>{{ row.recommended_dosage }}</strong></td>
+                    <td>{{ row.remarks }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div style="font-size: 8.5pt; font-weight: bold; margin-top: 4px;">Recommended Products:</div>
+        <ul style="margin: 2px 0 6px 15px; padding: 0; font-size: 8.5pt;">
+            {% for prod in crop.recommended_products %}
+            <li>{{ prod }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="analysis-text">{{ crop.analysis }}</div>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

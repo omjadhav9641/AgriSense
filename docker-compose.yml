@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: agrisense_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: agrisense_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  ml_engine:
+    build:
+      context: ./ml
+    container_name: agrisense_ml_engine
+    restart: always
+    ports:
+      - "8500:8500"
+    environment:
+      - PORT=8500
+
+  backend:
+    build:
+      context: ./backend
+    container_name: agrisense_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - USE_MYSQL=True
+      - DB_NAME=agrisense_db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_HOST=db
+      - DB_PORT=3306
+      - ML_ENGINE_URL=http://ml_engine:8500
+    depends_on:
+      - db
+      - ml_engine
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py seed_agrisense &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: agrisense_frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
