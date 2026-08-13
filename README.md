@@ -1,13 +1,33 @@
-# AgriSense
+<div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Frontend: React 18](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-61DAFB.svg)](https://react.dev/)
-[![Design System: Claymorphic Tailwind](https://img.shields.io/badge/Design_System-Claymorphic_Tailwind-38B2AC.svg)](https://tailwindcss.com/)
-[![Backend: Django REST 5.x](https://img.shields.io/badge/Backend-Django_REST_5.x-092E20.svg)](https://www.djangoproject.com/)
-[![ML Microservice: FastAPI](https://img.shields.io/badge/ML_Service-FastAPI_0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
-[![Priority State Focus: Maharashtra](https://img.shields.io/badge/Priority_Region-Maharashtra_Agri_Zone-FF9933.svg)](https://krishi.maharashtra.gov.in)
+  <br />
+  <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f69c.svg" alt="AgriSense Tractor Logo" width="120" height="120" />
+  <br />
 
-AgriSense is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
+  <h1>🌱 AgriSense</h1>
+
+  <p align="center">
+    <b>A comprehensive, intelligent AI-powered precision agriculture platform for modern farmers & Maharashtra agricultural governance.</b>
+  </p>
+
+  <p align="center">
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/DJANGO-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/FASTAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/REACT-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/VITE-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/TAILWIND_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/SQLITE-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" /></a>
+    <a href="https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/MYSQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" /></a>
+  </p>
+
+</div>
+
+---
+
+## 📖 About AgriSense
+
+**AgriSense** is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
 
 ---
 
