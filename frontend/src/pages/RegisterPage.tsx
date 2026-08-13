@@ -36,7 +36,21 @@ export const RegisterPage: React.FC = () => {
       await apiClient.post('/auth/register/', formData);
       navigate('/login');
     } catch (err: any) {
-      setError(err.response?.data?.username?.[0] || 'Registration failed. Please check inputs.');
+      let msg = 'Registration failed. Please check inputs.';
+      if (err.response?.data) {
+        if (typeof err.response.data === 'string') {
+          msg = err.response.data;
+        } else if (typeof err.response.data === 'object') {
+          const messages = Object.entries(err.response.data).map(([key, val]) => {
+            const strVal = Array.isArray(val) ? val.join(', ') : String(val);
+            return `${key}: ${strVal}`;
+          });
+          msg = messages.join(' | ');
+        }
+      } else if (err.message) {
+        msg = err.message;
+      }
+      setError(msg);
     } finally {
       setLoading(false);
     }
