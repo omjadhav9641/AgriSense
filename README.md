@@ -31,14 +31,14 @@
 
 ---
 
-## 🚀 1-Click Cloud Deployment (Option 2)
+## 🚀 100% Free Deployment Options (No Credit Card Required)
 
-Deploy AgriSense instantly using free cloud services:
-
-| Target | Deployment Service | Instant 1-Click Action |
-| :--- | :--- | :--- |
-| **React Frontend** | **Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense) |
-| **Backend & ML Stack** | **Render.com** | [![Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/omjadhav9641/AgriSense) |
+| Component | Platform | Free Features | Direct Deploy Link |
+| :--- | :--- | :--- | :--- |
+| **React Frontend** | **Vercel** | 100% Free, Unlimited deployments, No Card | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense) |
+| **Backend API / Docker** | **Koyeb** | 100% Free Web Service, No Card required | [Deploy on Koyeb](https://app.koyeb.com/services/deploy?type=git&repository=github.com/omjadhav9641/AgriSense) |
+| **Django Backend** | **PythonAnywhere** | 100% Free Python/Django hosting, No Card | [PythonAnywhere Setup](https://www.pythonanywhere.com) |
+| **FastAPI ML Service** | **Hugging Face** | Free 16GB RAM Container, No Card | [Hugging Face Spaces](https://huggingface.co/spaces) |
 
 ---
 
