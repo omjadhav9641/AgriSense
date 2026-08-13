@@ -1,4 +1,4 @@
-# AgriSense — Decoupled Three-Tier Precision Agriculture & Governance Platform
+# AgriSense
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Frontend: React 18](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-61DAFB.svg)](https://react.dev/)
@@ -8,6 +8,23 @@
 [![Priority State Focus: Maharashtra](https://img.shields.io/badge/Priority_Region-Maharashtra_Agri_Zone-FF9933.svg)](https://krishi.maharashtra.gov.in)
 
 AgriSense is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
+
+---
+
+## 🖼️ Application Showcase & UI Previews
+
+### 1. AgriSense Hero Dashboard & Microclimate Weather
+![AgriSense Hero Portal](docs/screenshots/agrisense_hero_portal.png)
+![AgriSense Dashboard Overview](docs/screenshots/dashboard_overview.png)
+
+### 2. Quick AI Crop Recommendation Microservice
+![Quick AI Crop Match](docs/screenshots/quick_ai_crop_match.png)
+
+### 3. Plant Disease AI Leaf Diagnostics (Computer Vision Pathology)
+![Plant Disease AI Diagnosis](docs/screenshots/plant_disease_ai.png)
+
+### 4. Direct Farmer-to-Buyer Produce Marketplace
+![Produce Marketplace](docs/screenshots/produce_marketplace.png)
 
 ---
 
@@ -26,7 +43,7 @@ AgriSense is engineered as a decoupled, asynchronous, 3-tier microservice archit
 ┌─────────────────────────────────▼────────────────────────────────┐
 │                       BUSINESS / API LAYER                       │
 │           Django REST Framework (Port 8000 / WSGI/ASGI)          │
-│   Authentication (JWT) • Role Management (Farmer/Admin/Manager)  │
+│   Authentication (JWT) • Role Management (Farmer/Admin/Manager) │
 │   Farms & Soil Health Engine • Marketplace & Inquiry Manager     │
 │   E-Store Orders & Inventory Audit • Government Schemes Engine   │
 └──────────────┬──────────────────────────────────┬────────────────┘
@@ -175,7 +192,7 @@ docker-compose up --build -d
 
 ---
 
-## 🎨 Design Philosophy & Visual Screenshots
+## 🎨 Design Philosophy & Visual Styling
 
 AgriSense adheres to a modern **Claymorphic** aesthetic, avoiding flat generic enterprise designs in favor of soft-depth layered clay styling, rounded card contours (`2xl`), rich agricultural tokens (`#2E6F40`, `#C86D3B`, `#FAF8F5`), micro-animations, and dynamic data visualizers.
 
