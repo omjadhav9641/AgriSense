@@ -31,6 +31,17 @@
 
 ---
 
+## 🚀 1-Click Cloud Deployment (Option 2)
+
+Deploy AgriSense instantly using free cloud services:
+
+| Target | Deployment Service | Instant 1-Click Action |
+| :--- | :--- | :--- |
+| **React Frontend** | **Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense) |
+| **Backend & ML Stack** | **Render.com** | [![Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/omjadhav9641/AgriSense) |
+
+---
+
 ## 🖼️ Application Showcase & UI Previews
 
 ### 1. AgriSense Hero Dashboard Portal
