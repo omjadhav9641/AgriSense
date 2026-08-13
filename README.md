@@ -31,14 +31,14 @@
 
 ---
 
-## 🚀 1-Click Cloud Deployment (Render & Vercel)
+## 🚀 1-Click Cloud Deployment (Vercel & Render)
 
 Deploy AgriSense using official 1-click cloud platform integrations:
 
 | Target | Deployment Service | Instant 1-Click Deploy |
 | :--- | :--- | :--- |
-| **Full Stack Blueprint** | **Render.com** | [![Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/omjadhav9641/AgriSense) |
-| **React Frontend** | **Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense) |
+| **React Frontend** | **Vercel** | <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense"><img src="https://img.shields.io/badge/DEPLOY_TO_VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy to Vercel" /></a> |
+| **Backend & ML Stack** | **Render.com** | <a href="https://render.com/deploy?repo=https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/DEPLOY_TO_RENDER-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Deploy to Render" /></a> |
 
 ---
 
