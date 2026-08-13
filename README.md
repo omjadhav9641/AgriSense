@@ -47,7 +47,8 @@
 
 ### 5. Quick AI Crop Recommendation Microservice
 ![Quick AI Crop Recommendation](docs/screenshots/05_quick_ai_recommendation.png)
-
+### 6 Soil Health & Crop Recommendation Report
+![Soil Health & Crop Recommendation Report](docs/screenshots/06_report.png)
 ---
 
 ## 🏛️ System Architecture & Technology Stack
