@@ -1,0 +1,33 @@
+services:
+  # FastAPI ML Engine Service
+  - type: web
+    name: agrisense-ml-engine
+    env: python
+    buildCommand: "pip install -r ml/requirements.txt"
+    startCommand: "uvicorn ml.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+
+  # Django REST Backend API Service
+  - type: web
+    name: agrisense-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt && python backend/manage.py migrate && python backend/manage.py seed_agrisense"
+    startCommand: "gunicorn --chdir backend core.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: DEBUG
+        value: "False"
+
+  # React Vite Frontend Service
+  - type: web
+    name: agrisense-frontend
+    env: static
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
