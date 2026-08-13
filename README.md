@@ -25,30 +25,9 @@
 
 ---
 
-## 🌐 Live Production Application Links
-
-| Live Component | Platform | Direct URL |
-| :--- | :--- | :--- |
-| **🌐 Production Web App** | **Vercel** | [https://agri-sense-khaki.vercel.app](https://agri-sense-khaki.vercel.app) |
-| **⚙️ Django REST API Backend** | **Render.com** | [https://agrisense-backend-nsh6.onrender.com/api](https://agrisense-backend-nsh6.onrender.com/api) |
-| **🤖 FastAPI ML Engine** | **Render.com** | [https://agrisense-ml-engine.onrender.com](https://agrisense-ml-engine.onrender.com) |
-
----
-
 ## 📖 About AgriSense
 
-**AgriSense** is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
-
----
-
-## 🚀 1-Click Cloud Deployment
-
-Deploy your own instance of AgriSense using official 1-click cloud platform integrations:
-
-| Target | Deployment Service | Instant 1-Click Deploy |
-| :--- | :--- | :--- |
-| **React Frontend** | **Vercel** | <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fomjadhav9641%2FAgriSense"><img src="https://img.shields.io/badge/DEPLOY_TO_VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy to Vercel" /></a> |
-| **Backend & ML Stack** | **Render.com** | <a href="https://render.com/deploy?repo=https://github.com/omjadhav9641/AgriSense"><img src="https://img.shields.io/badge/DEPLOY_TO_RENDER-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Deploy to Render" /></a> |
+**AgriSense** is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Ahilyanagar, Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
 
 ---
 
@@ -110,7 +89,7 @@ AgriSense is engineered as a decoupled, asynchronous, 3-tier microservice archit
 
 ### 1. Interactive Dashboard & Open-Meteo Microclimate Weather Engine
 - **Live Local Microclimate:** Fetches real-time temperature, humidity, wind speed, and 5-day weather forecasts via Open-Meteo API.
-- **Location Selector:** Quick switching between major agricultural hubs including **Pune, Nashik, Nagpur, Solapur, Mumbai, and Jalandhar**.
+- **Location Selector:** Quick switching between major agricultural hubs including **Ahilyanagar, Pune, Nashik, Nagpur, Solapur, Mumbai, and Jalandhar**.
 - **Soil Health Index Gauge:** Real-time visual indicator of parcel nutrient balance (Optimal, Warning, Deficient).
 - **Claymorphic Visual Design:** Modern 3D layered soft-depth cards using curated earthy palettes (Forest Green `#2E6F40`, Terracotta `#C86D3B`, Deep Clay `#2C2825`).
 
@@ -132,7 +111,7 @@ AgriSense is engineered as a decoupled, asynchronous, 3-tier microservice archit
 
 ### 5. Direct Farmer-to-Buyer Produce Marketplace (Maharashtra Focus)
 - **Direct Mandi Trading:** Peer-to-peer produce marketplace connecting farmers directly with bulk buyers, food processors, and wholesale merchants without middleman fees.
-- **Maharashtra APMC Mandis:** Pre-configured default listings across **Nashik APMC, Lasalgaon Onion Market, Pune APMC, Nagpur Orange Zone, and Solapur Pomegranate Mandi**.
+- **Maharashtra APMC Mandis:** Pre-configured default listings across **Ahilyanagar APMC, Nashik APMC, Lasalgaon Onion Market, Pune APMC, Nagpur Orange Zone, and Solapur Pomegranate Mandi**.
 - **Inquiry & Offer System:** Interactive modal enabling buyers to submit custom price offers and pickup inquiries directly to listing sellers with instant status alerts.
 
 ### 6. Agri E-Store & Atomic Order Fulfillment
@@ -146,7 +125,7 @@ AgriSense is engineered as a decoupled, asynchronous, 3-tier microservice archit
   - **MahaDBT Farmer Subsidy Portal:** 80% direct subsidy for drip/sprinkler irrigation, shade nets, and machinery in Maharashtra.
   - **PoCRA (Nanaji Deshmukh Krishi Sanjivani):** Climate-resilient financial aid up to ₹1 Lakh across 5,142 drought-prone Maharashtra villages.
   - **Mukhyamantri Solar Krishi Vahini 2.0 (MSKVY):** Guaranteed 12-hour daytime solar power supply for agricultural pumps.
-  - **Maharashtra Kanda Chawl Storage Subsidy:** 50% capital grant for building scientific onion storage structures in Nashik, Pune, Solapur & Ahmednagar.
+  - **Maharashtra Kanda Chawl Storage Subsidy:** 50% capital grant for building scientific onion storage structures in Ahilyanagar, Nashik, Pune & Solapur.
   - **Gopinath Munde Shetkari Apghat Bima:** ₹2 Lakh 100% state-funded accident insurance for all registered landholding farmers in Maharashtra.
   - **PM-KISAN, PMFBY, KCC Concessional Loans, PMKSY Drip, PM-KUSUM Solar Pumps, SMAM Machinery, PKVY Organic Grants, AIF Infrastructure Fund, Soil Health Card, Kisan Call Center (1800-180-1551)**.
 - **Interactive Guidance Modal:** Displays required application documents (Aadhaar, Khatauni Land Records, Bank Passbook) and direct links to official government portals.
