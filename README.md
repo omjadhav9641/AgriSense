@@ -25,15 +25,25 @@
 
 ---
 
+## 🌐 Live Production Application Links
+
+| Live Component | Platform | Direct URL |
+| :--- | :--- | :--- |
+| **🌐 Production Web App** | **Vercel** | [https://agri-sense-khaki.vercel.app](https://agri-sense-khaki.vercel.app) |
+| **⚙️ Django REST API Backend** | **Render.com** | [https://agrisense-backend-nsh6.onrender.com/api](https://agrisense-backend-nsh6.onrender.com/api) |
+| **🤖 FastAPI ML Engine** | **Render.com** | [https://agrisense-ml-engine.onrender.com](https://agrisense-ml-engine.onrender.com) |
+
+---
+
 ## 📖 About AgriSense
 
 **AgriSense** is a production-grade, state-of-the-art precision agriculture and governance control platform tailored for modern farmers, agronomists, and agricultural administrators. Designed with a priority focus on **Maharashtra agricultural zones** (Nashik, Pune, Solapur, Nagpur, Marathwada, Kolhapur), AgriSense combines **Rule-Based Deep Agronomy**, **FastAPI Machine Learning Inference**, **Computer Vision Leaf Pathology Diagnostics**, a **Direct Produce Marketplace**, and an **Agri E-Store** with atomic stock transaction handling.
 
 ---
 
-## 🚀 1-Click Cloud Deployment (Vercel & Render)
+## 🚀 1-Click Cloud Deployment
 
-Deploy AgriSense using official 1-click cloud platform integrations:
+Deploy your own instance of AgriSense using official 1-click cloud platform integrations:
 
 | Target | Deployment Service | Instant 1-Click Deploy |
 | :--- | :--- | :--- |
