@@ -14,13 +14,13 @@ AgriSense is a production-grade, state-of-the-art precision agriculture and gove
 ## 🖼️ Application Showcase & UI Previews
 
 ### 1. AgriSense Hero Dashboard Portal
-![AgriSense Hero Dashboard](docs/screenshots/01_dashboard_hero.png)
+![AgriSense Hero Portal](docs/screenshots/01_agrisense_hero_portal.png)
 
 ### 2. Live Microclimate Weather & Soil Health Index
-![Live Weather & Soil Health](docs/screenshots/02_dashboard_microclimate.png)
+![Live Weather & Soil Health](docs/screenshots/02_live_weather_soil_health.png)
 
 ### 3. Plant Disease AI Leaf Detection (Computer Vision Pathology)
-![Plant Disease Leaf Detection AI](docs/screenshots/03_plant_disease_ai.png)
+![Plant Disease AI Leaf Detection](docs/screenshots/03_plant_disease_ai.png)
 
 ### 4. Direct Farmer-to-Buyer Produce Marketplace
 ![Direct Produce Marketplace](docs/screenshots/04_produce_marketplace.png)
