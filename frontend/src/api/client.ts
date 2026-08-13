@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://agrisense-backend-nsh6.onrender.com/api';
+const rawBase = import.meta.env.VITE_API_BASE_URL || 'https://agrisense-backend-nsh6.onrender.com/api';
+const API_BASE_URL = rawBase.endsWith('/api') ? rawBase : `${rawBase.replace(/\/$/, '')}/api`;
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
