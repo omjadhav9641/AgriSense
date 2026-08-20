@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '../api/client';
 
 export interface User {
@@ -11,6 +12,7 @@ export interface User {
   phone?: string;
   state?: string;
   address?: string;
+  avatar_url?: string;
 }
 
 interface AuthContextType {
@@ -24,6 +26,8 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const queryClient = useQueryClient();
+
   const [user, setUser] = useState<User | null>(() => {
     const savedUser = localStorage.getItem('agrisense_user');
     return savedUser ? JSON.parse(savedUser) : null;
@@ -52,12 +56,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     fetchMe();
   }, [token]);
 
-  const login = (access: string, refresh: string, user: User) => {
+  const login = (access: string, refresh: string, initialUser: User) => {
     localStorage.setItem('agrisense_access_token', access);
     localStorage.setItem('agrisense_refresh_token', refresh);
-    localStorage.setItem('agrisense_user', JSON.stringify(user));
+    localStorage.setItem('agrisense_user', JSON.stringify(initialUser));
     setToken(access);
-    setUser(user);
+    setUser(initialUser);
+
+    // Invalidate and refetch all active queries on login to ensure fresh data
+    queryClient.invalidateQueries();
+    
+    // Fetch latest user details to sync updated profile images & fields
+    apiClient.get('/auth/me/').then((res) => {
+      setUser(res.data);
+      localStorage.setItem('agrisense_user', JSON.stringify(res.data));
+    }).catch(() => {});
   };
 
   const logout = () => {
@@ -66,6 +79,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('agrisense_user');
     setToken(null);
     setUser(null);
+
+    // Clear stale React Query cache on sign-out
+    queryClient.clear();
   };
 
   return (

@@ -61,11 +61,7 @@ class Command(BaseCommand):
         ]
 
         for cd in crops_data:
-            crop, created = Crop.objects.get_or_create(name=cd['name'], defaults=cd)
-            if not created:
-                for key, value in cd.items():
-                    setattr(crop, key, value)
-                crop.save()
+            Crop.objects.get_or_create(name=cd['name'], defaults=cd)
 
         self.stdout.write("Seeded 9 Crop Catalog records with accurate high-res imagery.")
 
@@ -111,11 +107,7 @@ class Command(BaseCommand):
         ]
 
         for pd in products_data:
-            product, created = Product.objects.get_or_create(name=pd['name'], defaults=pd)
-            if not created:
-                for key, value in pd.items():
-                    setattr(product, key, value)
-                product.save()
+            Product.objects.get_or_create(name=pd['name'], defaults=pd)
 
         self.stdout.write("Seeded E-Commerce Products.")
 

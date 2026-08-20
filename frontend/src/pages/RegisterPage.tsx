@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { apiClient } from '../api/client';
 import { ClayCard } from '../components/ClayCard';
 import { ClayInput } from '../components/ClayInput';
+import { PasswordInput } from '../components/PasswordInput';
 import { ClayButton } from '../components/ClayButton';
 import { Sprout, UserPlus } from 'lucide-react';
 
@@ -108,10 +109,10 @@ export const RegisterPage: React.FC = () => {
               onChange={handleChange}
             />
 
-            <ClayInput
+            <PasswordInput
               label="Password"
-              type="password"
               name="password"
+              placeholder="••••••••"
               value={formData.password}
               onChange={handleChange}
               required

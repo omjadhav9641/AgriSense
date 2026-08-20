@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { apiClient } from '../api/client';
 import { ClayCard } from '../components/ClayCard';
 import { ClayInput } from '../components/ClayInput';
+import { PasswordInput } from '../components/PasswordInput';
 import { ClayButton } from '../components/ClayButton';
 import { Sprout, LogIn } from 'lucide-react';
 
@@ -63,9 +64,8 @@ export const LoginPage: React.FC = () => {
               required
             />
 
-            <ClayInput
+            <PasswordInput
               label="Password"
-              type="password"
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

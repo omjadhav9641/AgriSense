@@ -14,12 +14,19 @@ services:
     name: agrisense-backend
     env: python
     buildCommand: "pip install -r backend/requirements.txt && python backend/manage.py migrate && python backend/manage.py seed_agrisense"
-    startCommand: "gunicorn --chdir backend core.wsgi:application"
+    startCommand: "gunicorn --chdir backend config.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.12
       - key: DEBUG
         value: "False"
+      # Production Managed DB (MySQL / Postgres) & Cloud Storage (S3 / Cloudinary)
+      # - key: DATABASE_URL
+      #   fromDatabase:
+      #     name: agrisense-db
+      #     property: connectionString
+      # - key: AWS_STORAGE_BUCKET_NAME
+      #   value: "agrisense-media-storage"
 
   # React Vite Frontend Service
   - type: web

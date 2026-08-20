@@ -13,6 +13,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     state = models.CharField(max_length=100, blank=True, null=True)
+    avatar_url = models.CharField(max_length=500, blank=True, null=True)
     is_deleted = models.BooleanField(default=False)
 
     def __str__(self):

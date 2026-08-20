@@ -18,6 +18,7 @@ export const ProfilePage: React.FC = () => {
     phone: user?.phone || '',
     state: user?.state || '',
     address: user?.address || '',
+    avatar_url: user?.avatar_url || '',
   });
 
   const [saving, setSaving] = useState(false);
@@ -71,8 +72,20 @@ export const ProfilePage: React.FC = () => {
         {/* Left Column: Profile Card & Quick Stats */}
         <div className="lg:col-span-1 space-y-6">
           <ClayCard className="p-6 text-center space-y-4">
-            <div className="w-20 h-20 rounded-full bg-[#E8F5E9] text-[#2E6F40] mx-auto flex items-center justify-center font-black text-3xl border-2 border-[#2E6F40]/30 shadow-inner">
-              {user.username.charAt(0).toUpperCase()}
+            <div className="w-24 h-24 rounded-full bg-[#E8F5E9] text-[#2E6F40] mx-auto flex items-center justify-center font-black text-3xl border-4 border-white shadow-md overflow-hidden relative">
+              {user.avatar_url ? (
+                <img
+                  src={user.avatar_url}
+                  alt={user.username}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              ) : null}
+              <span className={user.avatar_url ? 'hidden' : 'block'}>
+                {user.username.charAt(0).toUpperCase()}
+              </span>
             </div>
 
             <div>
@@ -169,7 +182,7 @@ export const ProfilePage: React.FC = () => {
 
               <ClayInput
                 label="Last Name"
-                placeholder="e.g. Prakash"
+                placeholder="e.g. Patel"
                 value={formData.last_name}
                 onChange={(e) => setFormData({ ...formData, last_name: e.target.value })}
               />
@@ -208,6 +221,14 @@ export const ProfilePage: React.FC = () => {
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               />
             </div>
+
+            <ClayInput
+              label="Profile Picture URL"
+              placeholder="https://images.unsplash.com/photo-..."
+              value={formData.avatar_url}
+              onChange={(e) => setFormData({ ...formData, avatar_url: e.target.value })}
+              helperText="Enter a direct image link for your farmer avatar photo"
+            />
 
             <div className="pt-4 border-t border-[#E5E0D8] flex items-center justify-end">
               <ClayButton
